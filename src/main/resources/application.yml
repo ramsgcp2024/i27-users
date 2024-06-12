@@ -33,7 +33,7 @@ spring:
       on-profile: dev
   datasource: 
     password: Gcp@2023
-    url: jdbc:mysql://35.224.187.49:3306/learnerCrownClothing?useSSL=FALSE
+    url: jdbc:mysql://34.171.47.197:3306/learnerCrownClothing?useSSL=FALSE
     username: root
   jpa:
     hibernate:
@@ -46,6 +46,6 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://34.16.196.228:5761/eureka/
+      defaultZone: http://35.196.148.247:5761/eureka/
   instance: 
     prefer-ip-address: true
