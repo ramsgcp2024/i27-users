@@ -1,0 +1,38 @@
+# Create manifest file for user Deployment 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: i27-user-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: i27-user-dev
+  template:
+    metadata:
+      labels:
+        name: i27-user-dev
+    spec: 
+      containers:
+        - image: DIT
+          name: i27-user-dev
+          # resources:
+          #   requests: 
+          #     memory: "128Mi"
+          #     cpu: "250m"
+          #   limits:
+          #     memory: "256Mi"
+          #     cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: i27-user-dev-svc
+spec: 
+  selector:
+    name: i27-user-dev
+  type: NodePort # ClusterIP, NodePort, LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 80 # This is the service port 
+    targetPort: 8761
