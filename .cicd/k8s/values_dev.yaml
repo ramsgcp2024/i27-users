@@ -1,0 +1,9 @@
+name: i27-user
+fullname: i27-user-dev
+replicas:
+  default: 1
+image: 
+  name: i27k8s10/user
+  tag: random
+namespace: cart-dev-ns 
+targetport: 8232
