@@ -1,9 +1,0 @@
-name: i27-user
-fullname: i27-user-stage
-replicas:
-  default: 1
-image: 
-  name: i27k8s10/user
-  tag: random
-namespace: cart-stage-ns 
-targetport: 8232
