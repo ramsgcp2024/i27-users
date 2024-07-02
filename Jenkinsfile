@@ -38,7 +38,7 @@ pipeline {
                 )
     }
     environment {
-        APPLICATION_NAME = "users"
+        APPLICATION_NAME = "user"
         SONAR_URL = "http://34.125.122.109:9000/"
         SONAR_TOKEN = credentials('sonar_creds')
         POM_VERSION = readMavenPom().getVersion()
@@ -77,7 +77,7 @@ pipeline {
                 withSonarQubeEnv('SonarQube') { //we given 'SonarQube' name at the time of Add sonarqube
                     sh """
                         mvn sonar:sonar \
-                        -Dsonar.projectKey=i27-users \
+                        -Dsonar.projectKey=i27-user \
                         -Dsonar.host.url=${env.SONAR_URL} \
                         -Dsonar.login=${SONAR_TOKEN}
                         """
